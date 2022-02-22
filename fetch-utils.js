@@ -38,12 +38,18 @@ export async function logout() {
     return (window.location.href = '/');
 }
 
-
 export async function fetchWorkshops() {
-    const resp = client.from('workshops').select(`*, participants(*)`);
-    console.log(resp);
+    const resp = client.from('workshops').select(`*, participants (*)`);
+    console.log(resp.data);
+    return checkError(resp);
 }
 
-// function checkError({ data, error }) {
-//     return error ? console.error(error) : data;
-// }
+export async function deleteParticipant(participantId) {
+    const resp = client.from('participants').delete().match({ id: participantId }).single();
+
+    return checkError(resp);
+}
+
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
+}
