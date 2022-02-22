@@ -1,4 +1,4 @@
-import { checkAuth, logout } from '../fetch-utils.js';
+import { checkAuth, logout, fetchWorkshops } from '../fetch-utils.js';
 
 checkAuth();
 
@@ -12,3 +12,7 @@ logoutButton.addEventListener('click', () => {
 addParticipantBtn.addEventListener('click', () => {
     location.replace('../create');
 });
+
+async function fetchWorkshops() {
+    
+}
