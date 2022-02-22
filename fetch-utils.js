@@ -1,5 +1,6 @@
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
+const SUPABASE_URL = 'https://egdrvheseyhayxbahrri.supabase.co';
+const SUPABASE_KEY =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVnZHJ2aGVzZXloYXl4YmFocnJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDQ4ODE3MTMsImV4cCI6MTk2MDQ1NzcxM30.9epFpiRNgk8RIyWEaIJUu1on7JQXBpyH2ROvOPGlajE';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -10,31 +11,36 @@ export function getUser() {
 export function checkAuth() {
     const user = getUser();
 
-    if (!user) location.replace('../');
+    if (!user) location.replace('../workshops');
 }
 
 export function redirectIfLoggedIn() {
     if (getUser()) {
-        location.replace('./other-page');
+        location.replace('./workshops');
     }
 }
 
 export async function signupUser(email, password) {
-    const response = await client.auth.signUp({ email, password });
+    const resp = await client.auth.signUp({ email, password });
 
-    return response.user;
+    return resp.user;
 }
 
 export async function signInUser(email, password) {
-    const response = await client.auth.signIn({ email, password });
+    const resp = await client.auth.signIn({ email, password });
 
-    return response.user;
+    return resp.user;
 }
 
 export async function logout() {
     await client.auth.signOut();
 
-    return (window.location.href = '../');
+    return (window.location.href = '/');
+}
+
+export async function fetchWorkshops() {
+    const resp = client.from('workshops').select(`*, participants(*)`);
+    console.log(resp);
 }
 
 // function checkError({ data, error }) {
