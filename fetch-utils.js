@@ -38,6 +38,7 @@ export async function logout() {
     return (window.location.href = '/');
 }
 
+
 export async function fetchWorkshops() {
     const resp = client.from('workshops').select(`*, participants(*)`);
     console.log(resp);
