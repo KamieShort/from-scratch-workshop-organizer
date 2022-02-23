@@ -1,5 +1,23 @@
 body {
     display: flex;
+    margin-top: 16%;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    background-image: url('../assets/background.jpg');
+    background-size: cover;
+    font-family: 'Balsamiq Sans', cursive;
+    color: navy;
+    font-size: larger;
+}
+button {
+    font-family: 'Balsamiq Sans', cursive;
+    color: navy;
+    border-radius: 8px;
+    border-color: navy;
+}
+
+#participant-form {
+    border-radius: 8px;
+    border-color: navy;
 }

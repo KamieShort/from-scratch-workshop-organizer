@@ -1,9 +1,28 @@
+body {
+    /* background-image: url('../assets/background.jpg'); */
+    /* background-size: cover; */
+    background-color: #357cc4;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: coral;
 }
 
-.workshops-container {
-    border: solid black;
+.workshop {
+    display: flex;
+    flex-direction: column;
+    border: solid whitesmoke;
+    border-radius: 10px;
+    color: coral;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+button {
+    font-family: 'Balsamiq Sans', cursive;
+    color: navy;
+    border-radius: 8px;
 }
