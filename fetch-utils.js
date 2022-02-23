@@ -7,6 +7,7 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
+console.log('hello');
 
 export function checkAuth() {
     const user = getUser();
@@ -39,13 +40,13 @@ export async function logout() {
 }
 
 export async function fetchWorkshops() {
-    const resp = client.from('workshops').select(`*, participants (*)`);
-    console.log(resp.data);
+    const resp = await client.from('workshops').select(`*, participants (*)`);
+    console.log(resp);
     return checkError(resp);
 }
 
 export async function deleteParticipant(participantId) {
-    const resp = client.from('participants').delete().match({ id: participantId }).single();
+    const resp = await client.from('participants').delete().match({ id: participantId }).single();
 
     return checkError(resp);
 }

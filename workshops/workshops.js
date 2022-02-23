@@ -16,7 +16,7 @@ addParticipantBtn.addEventListener('click', () => {
 });
 
 async function displayWorkshops() {
-    // workshopsEl.textContent = '';
+    workshopsEl.textContent = '';
 
     const workshops = await fetchWorkshops();
     console.log(workshops);
@@ -50,10 +50,10 @@ async function displayWorkshops() {
     }
 }
 
-displayWorkshops();
+// displayWorkshops();
 
-// window.addEventListener('load', async () => {
-//     const workshops = await fetchWorkshops();
+window.addEventListener('load', async () => {
+    // const workshops = await fetchWorkshops();
 
-//     displayWorkshops();
-// });
+    displayWorkshops();
+});
