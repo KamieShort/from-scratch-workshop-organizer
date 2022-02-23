@@ -17,7 +17,7 @@ export function checkAuth() {
 
 export function redirectIfLoggedIn() {
     if (getUser()) {
-        location.replace('./workshops');
+        location.replace('../workshops');
     }
 }
 
@@ -48,6 +48,13 @@ export async function fetchWorkshops() {
 export async function deleteParticipant(participantId) {
     const resp = await client.from('participants').delete().match({ id: participantId }).single();
 
+    return checkError(resp);
+}
+
+export async function createParticipant(participant) {
+    const resp = await client
+        .from('participants')
+        .insert({ name: participant.name, workshop_id: participant.workshop_id });
     return checkError(resp);
 }
 
