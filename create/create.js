@@ -18,7 +18,7 @@ form.addEventListener('submit', async (e) => {
     await createParticipant(participant);
     location.replace('../workshops');
 
-    // form.reset();
+    form.reset();
 });
 
 window.addEventListener('load', async () => {
