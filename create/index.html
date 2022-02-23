@@ -20,8 +20,18 @@
         <button id="workshops">See All Workshops</button>
         <main>
             <h1>Add Participant</h1>
-            <input name="add-participant" id="add-participant" />
-            <button id="submit">Submit</button>
+            <form class="participant-form" id="participant-form">
+                <label>
+                    Participant Name
+                    <input name="add-participant" id="add-participant" />
+                </label>
+                <label
+                    >Select Workshop
+                    <select name="workshop-id" id="workshop-id"></select>
+                </label>
+
+                <button id="submit">Submit</button>
+            </form>
         </main>
         <script type="module" src="./create.js"></script>
     </body>
