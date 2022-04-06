@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/style.css" />
+        <link rel="stylesheet" href="./create.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Shizuru&display=swap"
+            rel="stylesheet"
+        />
+        <title>Add Participant</title>
+    </head>
+
+    <body>
+        <header></header>
+        <button id="workshops">See All Workshops</button>
+        <main>
+            <h1>Add Participant</h1>
+            <form class="participant-form" id="participant-form">
+                <label>
+                    Participant Name
+                    <input name="add-participant" id="add-participant" />
+                </label>
+                <label
+                    >Select Workshop
+                    <select name="workshop-id" id="workshop-id"></select>
+                </label>
+
+                <button id="submit">Submit</button>
+            </form>
+        </main>
+        <script type="module" src="./create.js"></script>
+    </body>
+</html>
